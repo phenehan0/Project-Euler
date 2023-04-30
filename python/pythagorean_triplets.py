@@ -18,7 +18,7 @@ def minmax(N):
         min_c = N/3 + 1
     return max_a, max_b, min_c
 
-def factor_pairs(X, c):
+def pair_sums(X, c):
     idx1 = 1
     idx2 = X-1
     result = []
@@ -36,7 +36,7 @@ def main(N):
     c = max_c
 
     while a_b <= max_a + max_b and c >= min_c:
-        pairs = factor_pairs(a_b, c)
+        pairs = pair_sums(a_b, c)
         for a, b in pairs:
             if (a**2 + b**2 == c**2):
                 return a,b,c
