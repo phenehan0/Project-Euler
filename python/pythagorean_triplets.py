@@ -4,7 +4,6 @@ def minmax(N):
     that satisfies a + b + c = N where a, b, and c are distinct
     natural numbers.
     """
-    
     if N % 3 == 1:
         max_a = (N-1)/3 - 1
         max_b = (N-1)/3
@@ -13,7 +12,6 @@ def minmax(N):
         max_a = (N+1)/3 - 2
         max_b = (N+1)/3
         min_c = (N+1)/3 + 1
-
     elif N % 3 == 0:
         max_a = (N/3) - 1
         max_b = N/3
