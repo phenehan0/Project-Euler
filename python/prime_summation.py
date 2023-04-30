@@ -4,8 +4,8 @@ import time
 
 def primesBelowN(N):
     i = 2
-    results = {i: True for i in range(2, N+1)}
-    while i < int(math.sqrt(N))+1:
+    results = {i: True for i in range(2, N)}
+    while i < int(math.sqrt(N)):
         j=1
         res=0
         while res <= N:
