@@ -4,17 +4,14 @@ import time
 
 def primesBelowN(N):
     i = 2
-    j = 1
-    res = 0
-    results = []
-    results = {i: False for i in range(2, N+1)}
+    results = {i: True for i in range(2, N+1)}
     while i < int(math.sqrt(N))+1:
         j=1
         res=0
         while res <= N:
             res = i*j
-            if (not (j == 1 and results[res] == False)) and res <= N:
-                results[res] = True
+            if (not (j == 1 and results[res] == True)) and res <= N:
+                results[res] = False
             j += 1
         i += 1
     return results
@@ -25,7 +22,7 @@ def main(N, write_to_file=False):
     csv_str = ""
     sum = 0
     for i in results:
-        if not results[i]:
+        if results[i]:
             sum += i
             idx += 1
             if not write_to_file:
