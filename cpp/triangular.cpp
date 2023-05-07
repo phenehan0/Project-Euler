@@ -10,7 +10,11 @@ int factor_pairs(long int N) {
     int f_cnt = 0;
     while (i <= j) {
         if (N % i == 0 && N % j == 0) {
-            f_cnt ++;
+            if ( i == j) {
+                f_cnt ++;
+            } else {
+                f_cnt = f_cnt + 2;
+            };
         }
         i++;
         j = N / i;
@@ -25,11 +29,11 @@ int main() {
     int factors;
     for (long int i=1; i<1000000; i++) {
         X = i*i + i;
-        factors = factor_pairs(X);
+        factors = factor_pairs(X/2);
         if (factors > max_factors) {
             max_factors = factors;
         };
-        if (max_factors >= 500) {
+        if (max_factors > 500) {
             // cout << i << ' ' << X << ' ' << ' ' << X / 2 << '\n';
             cout << "result: " << X / 2 << '\n';
             time_t  t2 = time(0);
