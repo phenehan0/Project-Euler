@@ -1,4 +1,3 @@
-# include <vector>
 # include <iostream>
 # include <ctime>
 
@@ -34,7 +33,6 @@ int main() {
             max_factors = factors;
         };
         if (max_factors > 500) {
-            // cout << i << ' ' << X << ' ' << ' ' << X / 2 << '\n';
             cout << "result: " << X / 2 << '\n';
             time_t  t2 = time(0);
             cout << "seconds elapsed: " << t2 - t1;
