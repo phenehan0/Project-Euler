@@ -24,20 +24,22 @@ int factor_pairs(long int N) {
 int main() {
     time_t  t1 = time(0);
     int max_factors = 0;
-    long int X;
+    long int x = 1;
+    long int Y;
     int factors;
-    for (long int i=1; i<1000000; i++) {
-        X = i*i + i;
-        factors = factor_pairs(X/2);
+    while (max_factors <= 500) {
+        Y = x*x + x;
+        factors = factor_pairs(Y/2);
         if (factors > max_factors) {
             max_factors = factors;
         };
         if (max_factors > 500) {
-            cout << "result: " << X / 2 << '\n';
+            cout << "result: " << Y / 2 << '\n';
             time_t  t2 = time(0);
             cout << "seconds elapsed: " << t2 - t1;
             return 0;
         };
+        x++;
     };
     return 0;
 };
